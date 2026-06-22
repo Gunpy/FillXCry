@@ -1,0 +1,104 @@
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3-5);
+  flex-wrap: wrap;
+  padding: var(--toolbar-py) var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.brand {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  margin-right: var(--space-1);
+}
+
+.title {
+  font-size: var(--fs-14);
+  font-weight: var(--fw-bold);
+  letter-spacing: -0.01em;
+}
+
+.count {
+  font-size: var(--fs-12);
+  color: var(--color-text-muted);
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+// ── Freshness badge ──────────────────────────────────────────────────────────
+.badge {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-1) var(--space-2-5);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-control);
+}
+
+.dot {
+  width: var(--dot-size);
+  height: var(--dot-size);
+  border-radius: var(--radius-logo);
+  flex: 0 0 auto;
+}
+
+.dotLive {
+  background: var(--color-live);
+  animation: livepulse 2s infinite;
+}
+
+.dotStale {
+  background: var(--color-stale-dot);
+}
+
+.dotError {
+  background: var(--color-error-dot);
+}
+
+.badgeLabel {
+  font-size: var(--fs-12);
+  font-weight: var(--fw-semibold);
+}
+
+.labelLive {
+  color: var(--color-live);
+}
+
+.labelStale {
+  color: var(--color-stale-text);
+}
+
+.labelError {
+  color: var(--color-error-text);
+}
+
+.badgeTime {
+  font-size: var(--fs-11);
+  color: var(--color-text-muted);
+  letter-spacing: -0.01em;
+}
+
+// ── Stale banner ─────────────────────────────────────────────────────────────
+.banner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  background: var(--color-stale-banner-bg);
+  border-bottom: 1px solid var(--color-stale-banner-border);
+  font-size: var(--fs-12-5);
+  color: var(--color-stale-text);
+}
+
+.bannerDot {
+  width: var(--space-1-5);
+  height: var(--space-1-5);
+  border-radius: var(--radius-logo);
+  background: var(--color-stale-dot);
+  flex: 0 0 auto;
+}

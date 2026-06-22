@@ -1,0 +1,21 @@
+node_modules
+dist
+dist-ssr
+coverage
+*.local
+.env
+.env.local
+.env.*.local
+.DS_Store
+*.log
+.vite
+.idea
+.vscode
+/.playwright-mcp/
+
+# Internal spec files — kept locally, excluded from the repo
+CLAUDE.md
+DESIGN.md
+
+# Local dev screenshots
+/phase*.png

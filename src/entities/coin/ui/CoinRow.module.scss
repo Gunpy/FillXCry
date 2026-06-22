@@ -1,0 +1,93 @@
+.row:hover {
+  background: var(--color-row-hover);
+}
+
+.cell {
+  padding: var(--row-py) var(--cell-px);
+  border-bottom: 1px solid var(--color-border-row);
+  white-space: nowrap;
+}
+
+.cell:first-child {
+  padding-left: var(--cell-px-edge);
+  padding-right: var(--space-2);
+}
+
+.cell:last-child {
+  padding-right: var(--cell-px-edge);
+}
+
+.rank {
+  text-align: right;
+  font-size: var(--fs-12);
+  color: var(--color-text-rank);
+}
+
+.assetInner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2-5);
+}
+
+.name {
+  font-size: var(--fs-13);
+  font-weight: var(--fw-medium);
+  color: var(--color-text);
+  letter-spacing: -0.005em;
+}
+
+.ticker {
+  font-size: var(--fs-11-5);
+  font-weight: var(--fw-medium);
+  color: var(--color-text-rank);
+  letter-spacing: 0.02em;
+}
+
+.price {
+  text-align: right;
+  font-size: var(--fs-13);
+  font-weight: var(--fw-medium);
+  color: var(--color-text);
+}
+
+.num {
+  text-align: right;
+  font-size: var(--fs-12-5);
+}
+
+.mcap {
+  text-align: right;
+  font-size: var(--fs-13);
+  color: var(--color-text-secondary);
+}
+
+.vol {
+  text-align: right;
+  font-size: var(--fs-13);
+  color: var(--color-text-tertiary);
+}
+
+.spark {
+  text-align: right;
+}
+
+.sparkButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 3px var(--space-1-5);
+  margin: -3px calc(var(--space-1-5) * -1);
+  background: none;
+  border: none;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+
+  &:hover {
+    background: var(--color-spark-hover);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 1px;
+  }
+}

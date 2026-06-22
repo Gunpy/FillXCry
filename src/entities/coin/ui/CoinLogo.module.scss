@@ -1,0 +1,19 @@
+.logo {
+  width: var(--logo-size, 22px);
+  height: var(--logo-size, 22px);
+  border-radius: var(--radius-logo);
+  flex: 0 0 auto;
+  object-fit: cover;
+}
+
+.fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: hsl(var(--logo-hue, 0) 44% 50%);
+  color: var(--color-surface);
+  // Scale the monogram with the circle: ~10px at 22px, ~13px at 30px.
+  font-size: calc(var(--logo-size, 22px) * 0.45);
+  font-weight: var(--fw-heavy);
+  letter-spacing: 0.01em;
+}

@@ -1,0 +1,205 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-modal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-6);
+  background: var(--backdrop);
+}
+
+.dialog {
+  width: var(--modal-width);
+  max-width: 94vw;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-button);
+  border-radius: var(--radius-modal);
+  box-shadow: var(--shadow-modal);
+  overflow: hidden;
+}
+
+// ── Header ───────────────────────────────────────────────────────────────────
+.header {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-5) var(--space-5) var(--space-3-5);
+}
+
+.heading {
+  flex: 1;
+  min-width: 0;
+}
+
+.titleRow {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+}
+
+.name {
+  font-size: var(--fs-16);
+  font-weight: var(--fw-bold);
+  letter-spacing: -0.01em;
+}
+
+.ticker {
+  font-size: var(--fs-12);
+  font-weight: var(--fw-medium);
+  color: var(--color-text-rank);
+  letter-spacing: 0.02em;
+}
+
+.priceRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2-5);
+  margin-top: var(--space-1-5);
+}
+
+.price {
+  font-size: var(--fs-22);
+  font-weight: var(--fw-bold);
+  letter-spacing: -0.015em;
+  font-variant-numeric: tabular-nums;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-12-5);
+  font-weight: var(--fw-semibold);
+}
+
+.pillUp {
+  color: var(--color-gain);
+  background: var(--color-gain-bg);
+}
+
+.pillDown {
+  color: var(--color-loss);
+  background: var(--color-loss-bg);
+}
+
+.close {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--modal-close);
+  height: var(--modal-close);
+  font-size: var(--fs-17);
+  color: var(--color-text-tertiary);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-input);
+  border-radius: 7px;
+  cursor: pointer;
+  outline: none;
+
+  &:hover {
+    color: var(--color-text);
+    background: var(--color-input-bg);
+    border-color: var(--color-border-button-hover);
+  }
+
+  &:focus-visible {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-ring);
+  }
+}
+
+// ── Chart ────────────────────────────────────────────────────────────────────
+.chartWrap {
+  padding: 0 var(--space-4) var(--space-1);
+}
+
+.chartCaption {
+  padding: 0 var(--space-1) var(--space-1-5);
+  font-size: var(--fs-11);
+  font-weight: var(--fw-semibold);
+  color: var(--color-text-muted);
+  letter-spacing: 0.03em;
+}
+
+.chart {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.grid {
+  stroke: var(--color-chart-grid);
+  stroke-width: 1;
+}
+
+.area {
+  fill-opacity: 0.08;
+  stroke: none;
+}
+
+.line {
+  stroke-width: 1.8;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.up {
+  fill: var(--color-gain);
+  stroke: var(--color-gain);
+}
+
+.down {
+  fill: var(--color-loss);
+  stroke: var(--color-loss);
+}
+
+.yLabel {
+  font-size: var(--fs-10-5);
+  fill: var(--color-text-muted);
+}
+
+.xAxis {
+  position: relative;
+  height: 18px;
+  margin: var(--space-1) var(--space-1) 0;
+}
+
+.xTick {
+  position: absolute;
+  transform: translateX(-50%);
+  font-size: var(--fs-11);
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+// ── Stats grid (1px gap on a grey bg paints the hairlines) ───────────────────
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  margin: var(--space-3) 0 0;
+  background: var(--color-border);
+  border-top: 1px solid var(--color-border);
+}
+
+.stat {
+  background: var(--color-surface);
+  padding: var(--space-3) var(--space-4);
+}
+
+.statLabel {
+  font-size: var(--fs-11);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-1);
+}
+
+.statValue {
+  margin: 0;
+  font-size: var(--fs-14);
+  font-weight: var(--fw-semibold);
+  color: var(--color-text);
+  font-variant-numeric: tabular-nums;
+}

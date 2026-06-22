@@ -1,0 +1,29 @@
+.field {
+  position: relative;
+  flex: 1 1 220px;
+  min-width: 170px;
+  max-width: 340px;
+}
+
+.input {
+  width: 100%;
+  height: var(--control-h);
+  padding: 0 11px;
+  font-family: inherit;
+  font-size: var(--fs-13);
+  color: var(--color-text);
+  background: var(--color-input-bg);
+  border: 1px solid var(--color-border-input);
+  border-radius: var(--radius-control);
+  outline: none;
+
+  &::placeholder {
+    color: var(--color-text-muted);
+  }
+
+  &:focus {
+    background: var(--color-surface);
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-ring);
+  }
+}

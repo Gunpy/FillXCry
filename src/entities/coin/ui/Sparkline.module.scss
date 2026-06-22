@@ -1,0 +1,19 @@
+.spark {
+  display: inline-block;
+  vertical-align: middle;
+  overflow: visible;
+}
+
+.up {
+  stroke: var(--color-gain);
+}
+
+.down {
+  stroke: var(--color-loss);
+}
+
+.empty {
+  display: inline-block;
+  width: 88px;
+  height: 26px;
+}

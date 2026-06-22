@@ -1,0 +1,206 @@
+.scroll {
+  overflow: auto;
+  max-height: calc(100vh - var(--table-offset));
+}
+
+.table {
+  width: 100%;
+  min-width: var(--table-min);
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+
+// Density: drives the row vertical padding the cells consume via --row-py.
+.compact {
+  --row-py: var(--row-py-compact);
+}
+
+.comfortable {
+  --row-py: var(--row-py-comfortable);
+}
+
+// ── Header ───────────────────────────────────────────────────────────────────
+.th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: var(--color-surface);
+  padding: var(--row-py) var(--cell-px);
+  font-size: var(--fs-11);
+  font-weight: var(--fw-semibold);
+  color: var(--color-text-header);
+  white-space: nowrap;
+  user-select: none;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.th:first-child {
+  padding-left: var(--cell-px-edge);
+  padding-right: var(--space-2);
+}
+
+.th:last-child {
+  padding-right: var(--cell-px-edge);
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+.sortButton {
+  display: inline-flex;
+  align-items: baseline;
+  gap: var(--space-1);
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+
+  &:hover {
+    color: var(--color-text-secondary);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+}
+
+.sortArrow {
+  color: var(--accent);
+}
+
+// Cell padding for the non-CoinRow rows (skeleton / state panels) share the row rhythm.
+.cell {
+  padding: var(--row-py) var(--cell-px);
+  border-bottom: 1px solid var(--color-border-row);
+}
+
+.cell:first-child {
+  padding-left: var(--cell-px-edge);
+  padding-right: var(--space-2);
+}
+
+.cell:last-child {
+  padding-right: var(--cell-px-edge);
+}
+
+// ── Skeleton ─────────────────────────────────────────────────────────────────
+%shimmer {
+  background: var(--skeleton-gradient);
+  background-size: 400% 100%;
+  animation: sk 1.4s ease infinite;
+  border-radius: 3px;
+}
+
+.skeletonCell {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.skeletonLead {
+  justify-content: flex-start;
+  gap: var(--space-2-5);
+}
+
+.skeletonBar {
+  @extend %shimmer;
+  display: block;
+}
+
+.skeletonAvatar {
+  @extend %shimmer;
+  width: 22px;
+  height: 22px;
+  border-radius: var(--radius-logo);
+  flex: 0 0 auto;
+}
+
+// ── State panels (error / empty) ─────────────────────────────────────────────
+.stateCell {
+  padding: var(--state-py) var(--space-5);
+  text-align: center;
+}
+
+.errorPanel {
+  max-width: var(--state-max);
+  margin: 0 auto;
+}
+
+.errorIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--state-icon);
+  height: var(--state-icon);
+  margin: 0 auto var(--space-3-5);
+  border-radius: var(--radius-logo);
+  background: var(--color-error-icon-bg);
+  border: 1px solid var(--color-error-icon-border);
+  color: var(--color-error-icon);
+  font-size: var(--fs-18);
+  font-weight: var(--fw-semibold);
+  line-height: 1;
+}
+
+.errorTitle {
+  font-size: var(--fs-14-5);
+  font-weight: var(--fw-bold);
+  color: var(--color-text);
+  margin-bottom: var(--space-1);
+}
+
+.errorBody {
+  margin: 0 0 var(--space-4);
+  font-size: var(--fs-13);
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+.retry {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1-5);
+  padding: var(--space-2) var(--space-4);
+  font-family: inherit;
+  font-size: var(--fs-12-5);
+  font-weight: var(--fw-semibold);
+  color: var(--color-surface);
+  background: var(--color-retry-bg);
+  border: none;
+  border-radius: var(--radius-control);
+  cursor: pointer;
+}
+
+.retryIcon {
+  font-size: var(--fs-13);
+  line-height: 1;
+}
+
+.emptyTitle {
+  font-size: var(--fs-14);
+  font-weight: var(--fw-semibold);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-3-5);
+}
+
+.clear {
+  padding: var(--space-2) var(--space-3-5);
+  font-family: inherit;
+  font-size: var(--fs-12-5);
+  font-weight: var(--fw-semibold);
+  color: var(--accent);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-button);
+  border-radius: var(--radius-control);
+  cursor: pointer;
+}

@@ -1,0 +1,148 @@
+// Design tokens extracted from the Crypto Markets design (single source of truth for
+// every colour, radius, spacing step and type ramp). Components reference these via
+// var(--token); raw hex / magic numbers in component styles are not allowed (CLAUDE.md §7).
+
+:root {
+  // Canvas & surfaces
+  --color-canvas: #fbfbfc;
+  --color-surface: #ffffff;
+
+  // Borders & hairlines
+  --color-border: #ececee; // panel / header divider
+  --color-border-row: #f4f4f5; // between table rows
+  --color-border-input: #e8e8eb;
+  --color-border-button: #e4e4e7;
+  --color-border-button-hover: #d4d4d8;
+
+  // Interactive fills
+  --color-input-bg: #fafafa;
+  --color-row-hover: #fafafb;
+  --color-spark-hover: #f4f4f6;
+
+  // Text ramp (high → low emphasis)
+  --color-text: #18181b;
+  --color-text-secondary: #3f3f46;
+  --color-text-tertiary: #71717a;
+  --color-text-muted: #a1a1aa;
+  --color-text-header: #8a8a93;
+  --color-text-rank: #b4b4bc;
+
+  // Single restrained accent
+  --accent: #3862c0;
+  --accent-ring: rgba(56, 98, 192, 0.12);
+  --accent-selection: rgba(56, 98, 192, 0.16);
+
+  // Movement — muted, never neon. Neutral used when |change| < 0.05%.
+  --color-gain: #1a8754;
+  --color-loss: #c23b43;
+  --color-neutral: #8a8a93;
+  --color-gain-bg: #ecf6f0;
+  --color-loss-bg: #fbeded;
+
+  // Freshness states
+  --color-live: #1a8754;
+  --color-stale-text: #8a6516;
+  --color-stale-dot: #c28a2b;
+  --color-stale-banner-bg: #fbf6ec;
+  --color-stale-banner-border: #f0e6cf;
+  --color-error-text: #9b3438;
+  --color-error-dot: #c23b43;
+
+  // Error panel
+  --color-error-icon-bg: #fbeded;
+  --color-error-icon-border: #f4dada;
+  --color-error-icon: #c23b43;
+  --color-retry-bg: #18181b;
+
+  // Skeleton shimmer
+  --skeleton-gradient: linear-gradient(90deg, #f0f0f2 25%, #e6e6e9 37%, #f0f0f2 63%);
+
+  // Radii
+  --radius-card: 8px;
+  --radius-control: 6px;
+  --radius-modal: 10px;
+  --radius-pill: 5px;
+  --radius-logo: 50%;
+
+  // Spacing — 8px grid (with the half-steps the design actually uses)
+  --space-1: 4px;
+  --space-1-5: 6px;
+  --space-2: 8px;
+  --space-2-5: 10px;
+  --space-3: 12px;
+  --space-3-5: 14px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+
+  // Table metrics
+  --row-py-compact: 7px;
+  --row-py-comfortable: 11px;
+  --row-py: var(--row-py-compact); // active density; comfortable modifier overrides
+  --cell-px: 14px;
+  --cell-px-edge: 16px;
+  --layout-max: 1180px;
+  --table-min: 880px;
+  --control-h: 32px;
+  --toolbar-py: 13px;
+  --dot-size: 7px; // freshness status dot
+  --table-offset: 132px; // toolbar + page chrome above the scroll area
+
+  // Empty / error state panels
+  --state-py: 64px;
+  --state-max: 340px;
+  --state-icon: 34px;
+
+  // Detail modal
+  --modal-width: 740px;
+  --modal-close: 30px;
+  --color-chart-grid: #f0f0f2;
+
+  // Typography
+  --font-sans: -apple-system, 'SF Pro Text', 'Segoe UI', system-ui, 'Helvetica Neue', sans-serif;
+  --fs-10-5: 10.5px;
+  --fs-11: 11px;
+  --fs-11-5: 11.5px;
+  --fs-17: 17px;
+  --fs-12: 12px;
+  --fs-12-5: 12.5px;
+  --fs-13: 13px;
+  --fs-14: 14px;
+  --fs-14-5: 14.5px;
+  --fs-16: 16px;
+  --fs-18: 18px;
+  --fs-22: 22px;
+  --fw-regular: 450;
+  --fw-medium: 550;
+  --fw-semibold: 600;
+  --fw-bold: 650;
+  --fw-heavy: 700;
+
+  // Elevation
+  --shadow-modal: 0 16px 48px -12px rgba(24, 24, 27, 0.28);
+  --backdrop: rgba(24, 24, 27, 0.34);
+
+  // Motion
+  --z-modal: 50;
+}
+
+@keyframes sk {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+@keyframes livepulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(26, 135, 84, 0.35);
+  }
+  70% {
+    box-shadow: 0 0 0 5px rgba(26, 135, 84, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(26, 135, 84, 0);
+  }
+}
