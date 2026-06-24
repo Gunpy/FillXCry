@@ -7,6 +7,8 @@ on **Feature-Sliced Design**.
 
 ## Getting started
 
+Requires Node 18+ and pnpm.
+
 ```bash
 pnpm install
 cp .env.example .env.local   # optional: set VITE_CG_KEY (CoinGecko demo key)
